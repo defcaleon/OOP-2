@@ -2,6 +2,7 @@ package com.website;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ComboBox;
 
 public class Initialization {
@@ -16,5 +17,10 @@ public class Initialization {
         ObservableList<String> arr = FXCollections.observableArrayList("line","arc","square","rectangle","circle","ellipse","polygon");
         brushType.setItems(arr);
         brushType.getSelectionModel().selectFirst();
+    }
+
+    public static void gcInit(GraphicsContext gc, Brush brush){
+        gc.setLineWidth(brush.getBrushWidth());
+        gc.setStroke(brush.getBrushColor());
     }
 }

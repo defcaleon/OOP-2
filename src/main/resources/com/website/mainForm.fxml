@@ -34,12 +34,12 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ColorPicker layoutX="887.0" layoutY="25.0" prefHeight="66.0" prefWidth="137.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="37.0" layoutX="841.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="39.0" AnchorPane.rightAnchor="144.0" AnchorPane.topAnchor="25.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="37.0" layoutX="791.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="39.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="25.0" />
+      <ColorPicker fx:id="colorBar" layoutX="887.0" layoutY="25.0" prefHeight="66.0" prefWidth="137.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <Rectangle fx:id="col2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="37.0" layoutX="841.0" layoutY="25.0" onMouseClicked="#color2Clicked" stroke="BLACK" strokeType="INSIDE" width="39.0" AnchorPane.rightAnchor="144.0" AnchorPane.topAnchor="25.0" />
+      <Rectangle fx:id="col1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="37.0" layoutX="791.0" layoutY="25.0" onMouseClicked="#color1Clicked" stroke="BLACK" strokeType="INSIDE" width="39.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="25.0" />
       <Label layoutX="848.0" layoutY="74.0" prefHeight="17.0" prefWidth="39.0" text="col 2" textAlignment="CENTER" />
       <Label layoutX="802.0" layoutY="74.0" prefHeight="17.0" prefWidth="39.0" text="col 1" textAlignment="CENTER" />
-      <Canvas height="688.0" layoutY="90.0" width="1024.0" AnchorPane.topAnchor="90.0" />
+      <Canvas fx:id="canvas" height="688.0" layoutY="90.0" width="1024.0" AnchorPane.topAnchor="90.0" />
       <ComboBox id="brushType" fx:id="brushType" layoutX="695.0" layoutY="25.0" prefHeight="39.0" prefWidth="84.0" />
       <Label layoutX="695.0" layoutY="74.0" prefHeight="17.0" prefWidth="96.0" text="brush width in px" textAlignment="CENTER" />
       <Button fx:id="undoBtn" layoutY="24.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="66.0" text="UNDO" />
