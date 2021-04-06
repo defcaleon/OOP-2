@@ -1,13 +1,16 @@
-package com.website;
+package com.website.brushes;
 
 import com.website.interfaces.Brushes;
 import javafx.scene.paint.Color;
 
-public class Brush implements Brushes {
+public class SimpleBrush implements Brushes {
     private  Color brushColor;
     private  int widthPx;
 
-    public Brush(Color brushColor, int widthPx) {
+    public SimpleBrush(){
+
+    }
+    public SimpleBrush(Color brushColor, int widthPx) {
         this.brushColor = brushColor;
         this.widthPx = widthPx;
     }

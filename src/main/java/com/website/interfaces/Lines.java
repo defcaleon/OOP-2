@@ -1,18 +1,12 @@
 package com.website.interfaces;
 
+import com.website.model.Dot;
 import javafx.scene.canvas.GraphicsContext;
 
 public interface Lines {
-
     void paint(GraphicsContext gc,Brushes brush);
-    void delete();
-    void copy();
 
-    void onFocus();
-    void offFocus();
-
-    void serialize();
-    void deserialize();
-
+    public Dot[] getDots();
+    public void setDots(Dot[] dots);
 
 }

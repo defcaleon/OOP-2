@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ColorPicker?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.website.MainController">
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.website.MainController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="1024.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -40,11 +34,11 @@
       <Label layoutX="848.0" layoutY="74.0" prefHeight="17.0" prefWidth="39.0" text="col 2" textAlignment="CENTER" />
       <Label layoutX="802.0" layoutY="74.0" prefHeight="17.0" prefWidth="39.0" text="col 1" textAlignment="CENTER" />
       <Canvas fx:id="canvas" height="688.0" layoutY="90.0" width="1024.0" AnchorPane.topAnchor="90.0" />
-      <ComboBox id="brushType" fx:id="brushType" layoutX="695.0" layoutY="25.0" prefHeight="39.0" prefWidth="84.0" />
-      <Label layoutX="695.0" layoutY="74.0" prefHeight="17.0" prefWidth="96.0" text="brush width in px" textAlignment="CENTER" />
+      <ComboBox id="brushType" fx:id="brushType" layoutX="655.0" layoutY="25.0" prefHeight="39.0" prefWidth="124.0" />
+      <Label layoutX="654.0" layoutY="74.0" prefHeight="17.0" prefWidth="137.0" text="simpleBrush width in px" textAlignment="CENTER" />
       <Button fx:id="undoBtn" layoutY="24.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="66.0" text="UNDO" />
       <Button fx:id="redoBtn" layoutX="66.0" layoutY="24.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="66.0" text="REDO" />
-      <ComboBox id="brushType" fx:id="figureBox" layoutX="512.0" layoutY="25.0" prefHeight="39.0" prefWidth="161.0" />
-      <Label layoutX="573.0" layoutY="74.0" prefHeight="17.0" prefWidth="39.0" text="figures" textAlignment="CENTER" />
+      <ComboBox id="brushType" fx:id="figureBox" layoutX="570.0" layoutY="25.0" prefHeight="39.0" prefWidth="66.0" />
+      <Label layoutX="584.0" layoutY="74.0" prefHeight="17.0" prefWidth="39.0" text="figures" textAlignment="CENTER" />
    </children>
 </AnchorPane>

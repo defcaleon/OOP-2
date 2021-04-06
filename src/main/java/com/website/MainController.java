@@ -1,5 +1,7 @@
 package com.website;
 
+import com.website.model.Initialization;
+import com.website.model.Model;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -35,6 +37,7 @@ public class MainController {
 
 
     private  GraphicsContext gc;
+    private final Model model = new Model();
 
     @FXML
     public void initialize() {
@@ -43,15 +46,10 @@ public class MainController {
         init.loadFigures(figureBox);
         this.gc = canvas.getGraphicsContext2D();
 
+        model.start(gc);
 
-        /*try {
 
-            System.out.println("aaaaaaa");
 
-        }catch (Exception e){
-            System.out.println("dsdsd");
-            System.out.println(e.getMessage());
-        }*/
 
     }
 

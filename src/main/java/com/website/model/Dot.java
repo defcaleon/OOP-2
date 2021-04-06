@@ -1,4 +1,4 @@
-package com.website;
+package com.website.model;
 
 import java.util.Objects;
 

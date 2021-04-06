@@ -1,5 +1,7 @@
-package com.website;
+package com.website.model;
 
+import com.website.brushes.SimpleBrush;
+import com.website.interfaces.Brushes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.canvas.GraphicsContext;
@@ -19,7 +21,7 @@ public class Initialization {
         brushType.getSelectionModel().selectFirst();
     }
 
-    public static void gcInit(GraphicsContext gc, Brush brush){
+    public static void gcInit(GraphicsContext gc, Brushes brush){
         gc.setLineWidth(brush.getBrushWidth());
         gc.setStroke(brush.getBrushColor());
     }

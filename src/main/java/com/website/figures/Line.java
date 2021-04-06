@@ -1,92 +1,45 @@
 package com.website.figures;
 
-import com.website.Brush;
-import com.website.Dot;
-import com.website.Initialization;
+import com.website.model.Initialization;
+import com.website.brushes.SimpleBrush;
+import com.website.model.Dot;
 import com.website.interfaces.Brushes;
 import com.website.interfaces.Lines;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 
 public class Line implements Lines {
 
-    private Brush brush;
-    private GraphicsContext gc;
+    private Brushes brush;
+    private Dot[] dots;
 
-    private Dot start;
-    private Dot end;
-
-    public Brush getBrush() {
+    public Brushes getBrush() {
         return brush;
     }
 
-    public void setBrush(Brush brush) {
+    public void setBrush(Brushes brush) {
         this.brush = brush;
     }
 
-    public GraphicsContext getGc() {
-        return gc;
+    public Dot[] getDots() {
+        return dots;
     }
 
-    public void setGc(GraphicsContext gc) {
-        this.gc = gc;
+    public void setDots(Dot[] dots) {
+        this.dots = dots;
     }
 
-    public Dot getStart() {
-        return start;
-    }
-
-    public void setStart(Dot start) {
-        this.start = start;
-    }
-
-    public Dot getEnd() {
-        return end;
-    }
-
-    public void setEnd(Dot end) {
-        this.end = end;
-    }
-
-    public Line(GraphicsContext gc, Brush brush) {
+    public Line(Brushes brush){
         this.brush=brush;
-        this.gc=gc;
+    }
+    public Line(GraphicsContext gc, SimpleBrush simpleBrush) {
+
     }
 
     @Override
     public void paint(GraphicsContext gc, Brushes brush) {
-        //Initialization.gcInit(gc,brush);
-        gc.strokeLine(start.getX(),start.getY(),end.getX(),end.getY());
+        Initialization.gcInit(gc,brush);
+        gc.strokeLine(dots[0].getX(),dots[0].getY(),dots[1].getX(),dots[1].getY());
     }
 
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void copy() {
-
-    }
-
-    @Override
-    public void onFocus() {
-
-    }
-
-    @Override
-    public void offFocus() {
-
-    }
-
-    @Override
-    public void serialize() {
-
-    }
-
-    @Override
-    public void deserialize() {
-
-    }
 
 }
