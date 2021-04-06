@@ -23,6 +23,23 @@ public class Initialization {
 
     public static void gcInit(GraphicsContext gc, Brushes brush){
         gc.setLineWidth(brush.getBrushWidth());
-        gc.setStroke(brush.getBrushColor());
+        gc.setStroke(brush.getBrushLineColor());
+        gc.setFill(brush.getBrushFillColor());
+    }
+
+    public int ValidTextArea(String text){
+        try {
+            int i= Integer.parseInt(text);
+            return  i<0? -1:i;
+        }catch (Exception e){
+            return -1;
+        }
+
+    }
+
+
+
+    public void brushInit(Brushes brush){
+
     }
 }

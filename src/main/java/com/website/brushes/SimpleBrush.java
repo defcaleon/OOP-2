@@ -4,21 +4,23 @@ import com.website.interfaces.Brushes;
 import javafx.scene.paint.Color;
 
 public class SimpleBrush implements Brushes {
-    private  Color brushColor;
+    private  Color brushLineColor;
+    private  Color brushFillColor;
     private  int widthPx;
 
     public SimpleBrush(){
 
     }
-    public SimpleBrush(Color brushColor, int widthPx) {
-        this.brushColor = brushColor;
+
+    public SimpleBrush(Color brushLineColor, Color brushFillColor, int widthPx) {
+        this.brushLineColor = brushLineColor;
+        this.brushFillColor = brushFillColor;
         this.widthPx = widthPx;
     }
 
-
     @Override
-    public void setBrushColor(Color color) {
-        this.brushColor=color;
+    public void setBrushLineColor(Color color) {
+        this.brushLineColor=color;
     }
 
     @Override
@@ -27,8 +29,18 @@ public class SimpleBrush implements Brushes {
     }
 
     @Override
-    public Color getBrushColor() {
-        return brushColor;
+    public void setBrushFillColor(Color color) {
+        this.brushFillColor=color;
+    }
+
+    @Override
+    public Color getBrushLineColor() {
+        return brushLineColor;
+    }
+
+    @Override
+    public Color getBrushFillColor() {
+        return brushFillColor;
     }
 
     @Override

@@ -4,11 +4,14 @@ import javafx.scene.paint.Color;
 
 public interface Brushes {
 
-    void setBrushColor(Color color);
+    void setBrushLineColor(Color color);
     void setBrushWidth(int widthPx);
+    void setBrushFillColor(Color color);
 
-    Color getBrushColor();
+    Color getBrushLineColor();
+    Color getBrushFillColor();
     int getBrushWidth();
+
 
 
 
