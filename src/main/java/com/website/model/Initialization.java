@@ -6,6 +6,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ComboBox;
+import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 public class Initialization {
 
@@ -16,7 +19,7 @@ public class Initialization {
     }
 
     public void loadFigures(ComboBox<String> brushType){
-        ObservableList<String> arr = FXCollections.observableArrayList("line","arc","square","rectangle","circle","ellipse","polygon");
+        ObservableList<String> arr = FXCollections.observableArrayList("line","rectangle","ellipse","polyline","polygon");
         brushType.setItems(arr);
         brushType.getSelectionModel().selectFirst();
     }
@@ -37,9 +40,26 @@ public class Initialization {
 
     }
 
+    public static double[] dotArrToIntXArr(ArrayList<Dot> dots){
+        double[] arr=new double[dots.size()];
+        for(int i=0;i<dots.size();i++){
+            arr[i]=dots.get(i).getX();
+        }
 
+        return  arr;
+    }
+    public static double[] dotArrToIntYArr(ArrayList<Dot> dots){
+        double[] arr=new double[dots.size()];
+        for(int i=0;i<dots.size();i++){
+            arr[i]=dots.get(i).getY();
+        }
 
-    public void brushInit(Brushes brush){
+        return  arr;
+    }
 
+    public static void whiteBrushInit(Brushes brush){
+
+        brush.setBrushFillColor(Color.WHITE);
+        brush.setBrushLineColor(Color.WHITE);
     }
 }

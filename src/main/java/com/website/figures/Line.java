@@ -10,23 +10,13 @@ import java.util.ArrayList;
 
 public class Line implements Lines {
 
-    private ArrayList<Dot> dots;
 
-    public Line(ArrayList<Dot> arrDot){
-        this.dots=arrDot;
-    }
+    public Line(){
 
-
-    public ArrayList<Dot> getDots() {
-        return dots;
-    }
-
-    public void setDots(ArrayList<Dot> dots) {
-        this.dots = dots;
     }
 
     @Override
-    public void paint(GraphicsContext gc, Brushes brush) {
+    public void paint(GraphicsContext gc, Brushes brush, ArrayList<Dot> dots) {
         if(dots.size()<2){
             Model.alert("need 2 cords to draw line");
             return;

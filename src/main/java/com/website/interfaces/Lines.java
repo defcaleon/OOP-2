@@ -7,11 +7,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 public interface Lines {
-    void paint(GraphicsContext gc,Brushes brush);
 
-    public ArrayList<Dot> getDots();
-    public void setDots(ArrayList<Dot> dots);
-
-
+    void paint(GraphicsContext gc,Brushes brush,ArrayList<Dot> dots);
 
 }

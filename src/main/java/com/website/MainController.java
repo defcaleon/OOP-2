@@ -115,4 +115,8 @@ public class MainController {
     public void comboAction2(ActionEvent actionEvent) {
 
     }
+
+    public void canvasClick(MouseEvent mouseEvent) {
+        dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
+    }
 }
