@@ -1,6 +1,5 @@
 package com.website;
 
-import com.website.figuresfactories.Factory;
 import com.website.model.Dot;
 import com.website.model.Initialization;
 import com.website.model.Model;
@@ -119,5 +118,8 @@ public class MainController {
 
     public void canvasClick(MouseEvent mouseEvent) {
         dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
+    }
+
+    public void clearCanvas(ActionEvent actionEvent) {
     }
 }

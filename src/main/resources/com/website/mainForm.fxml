@@ -33,6 +33,13 @@
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
+            <Menu fx:id="menuItemClear" mnemonicParsing="false" onAction="#clearCanvas" text="Clear">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
       <ColorPicker fx:id="colorBar" layoutX="887.0" layoutY="25.0" prefHeight="66.0" prefWidth="137.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />

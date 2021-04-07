@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class Model {
 
+    ArrayList<Lines> figureArr;
+
     private FigureFactory fabric;
     private BrushFactory brushFabric;
 
