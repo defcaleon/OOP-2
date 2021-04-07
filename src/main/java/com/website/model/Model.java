@@ -2,8 +2,9 @@ package com.website.model;
 
 
 import com.website.brushes.SimpleBrush;
-import com.website.figuresfactories.AbstractFactory;
-import com.website.figuresfactories.Factory;
+import com.website.brushfactories.BrushFactory;
+import com.website.figuresfactories.FigureFactory;
+import com.website.figuresfactories.LineFactory;
 import com.website.interfaces.Brushes;
 
 import com.website.interfaces.Lines;
@@ -15,37 +16,36 @@ import java.util.ArrayList;
 
 public class Model {
 
-    private final Factory factory = new Factory();
+    private FigureFactory fabric;
+    private BrushFactory brushFabric;
+
     private Brushes brush;
-    private Brushes whiteBrush = new SimpleBrush();
-    private Lines figure;
+    private final Brushes whiteBrush = new SimpleBrush();
 
     public void start(GraphicsContext gc){
 
-        this.brush = factory.createBrush("simple");
+        fabric =  new LineFactory();
+        this.brushFabric=Initialization.getBrushByName("simple");
+        assert brushFabric != null;
+        this.brush = brushFabric.createBrush();
         brushStartInit(this.brush);
         Initialization.whiteBrushInit(whiteBrush);
 
     }
 
+    public void setFabric(FigureFactory fabric) {
+        this.fabric = fabric;
+    }
+
     public void draw(GraphicsContext gc, ArrayList<Dot> dotArr, String figure){
-        AbstractFactory fabric =Factory.getFactoryByName(figure);
+
 
         assert fabric != null;
-        this.figure = fabric.createFigure();
-        this.figure.paint(gc,this.brush,dotArr);
+        Lines figure1 = fabric.createFigure();
+        figure1.paint(gc,this.brush,dotArr);
         dotArr.clear();
     }
 
-    public void clear(GraphicsContext gc, ArrayList<Dot> dotArr, String figure){
-        AbstractFactory fabric =Factory.getFactoryByName(figure);
-
-        assert fabric != null;
-        this.figure = fabric.createFigure();
-        this.whiteBrush.setBrushWidth(this.brush.getBrushWidth());
-        this.figure.paint(gc,this.brush,dotArr);
-        dotArr.clear();
-    }
 
     public  static void alert(String msg){
 

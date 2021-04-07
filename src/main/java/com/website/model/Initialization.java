@@ -1,6 +1,8 @@
 package com.website.model;
 
-import com.website.brushes.SimpleBrush;
+import com.website.brushfactories.BrushFactory;
+import com.website.brushfactories.SimpleBrushFactory;
+import com.website.figuresfactories.*;
 import com.website.interfaces.Brushes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -61,5 +63,37 @@ public class Initialization {
 
         brush.setBrushFillColor(Color.WHITE);
         brush.setBrushLineColor(Color.WHITE);
+    }
+
+    public  static FigureFactory getFactoryByName(String name){
+        switch (name){
+            case "line":{
+                return new LineFactory();
+            }
+            case "rectangle":{
+                return  new RectangleFactory();
+            }
+            case "polyline":{
+                return  new PolyLineFactory();
+            }
+            case"ellipse":{
+                return  new EllipseFactory();
+            }
+            case "polygon":{
+                return  new PolygonFactory();
+            }
+            default: return null;
+        }
+    }
+
+    public static BrushFactory getBrushByName(String name){
+
+        switch (name){
+            case "simple":{
+                return new SimpleBrushFactory();
+            }
+
+            default: return null;
+        }
     }
 }

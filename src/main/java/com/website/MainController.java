@@ -1,5 +1,6 @@
 package com.website;
 
+import com.website.figuresfactories.Factory;
 import com.website.model.Dot;
 import com.website.model.Initialization;
 import com.website.model.Model;
@@ -113,7 +114,7 @@ public class MainController {
     }
 
     public void comboAction2(ActionEvent actionEvent) {
-
+        this.model.setFabric(Initialization.getFactoryByName(figureBox.getValue()));
     }
 
     public void canvasClick(MouseEvent mouseEvent) {

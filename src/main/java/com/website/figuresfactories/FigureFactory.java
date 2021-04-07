@@ -2,7 +2,7 @@ package com.website.figuresfactories;
 
 import com.website.interfaces.Lines;
 
-public interface AbstractFactory {
+public interface FigureFactory {
 
     Lines createFigure();
 
