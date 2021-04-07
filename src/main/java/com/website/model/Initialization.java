@@ -1,5 +1,6 @@
 package com.website.model;
 
+import com.website.brushes.SimpleBrush;
 import com.website.brushfactories.BrushFactory;
 import com.website.brushfactories.SimpleBrushFactory;
 import com.website.figuresfactories.*;
@@ -95,5 +96,11 @@ public class Initialization {
 
             default: return null;
         }
+    }
+
+    public  static Brushes getBrushCopy(Brushes brush){
+            //
+            return new SimpleBrush(brush.getBrushLineColor(),brush.getBrushFillColor(), brush.getBrushWidth());
+
     }
 }

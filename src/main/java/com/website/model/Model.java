@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Model {
 
-    ArrayList<Lines> figureArr;
+    ArrayList<Proection> figureArr = new ArrayList<>();
 
     private FigureFactory fabric;
     private BrushFactory brushFabric;
@@ -45,6 +45,8 @@ public class Model {
         assert fabric != null;
         Lines figure1 = fabric.createFigure();
         figure1.paint(gc,this.brush,dotArr);
+
+        figureArr.add(new Proection(figure1,dotArr,brush));
         dotArr.clear();
     }
 
@@ -66,6 +68,21 @@ public class Model {
         brush.setBrushWidth(2);
     }
 
+    public void redraw(GraphicsContext gc){
+       for(Proection ob:figureArr){
+           ob.getFigure().paint(gc,ob.getBrush(),ob.getDots());
+
+       }
+
+    }
+    public void mouseDraw(GraphicsContext gc, ArrayList<Dot> dotArr, String figure) {
+
+        assert fabric != null;
+        Lines figure1 = fabric.createFigure();
+        figure1.paint(gc, this.brush, dotArr);
+    }
+
+
     public void setBrushLineColor(Color color){
         brush.setBrushLineColor(color);
     }
@@ -74,6 +91,10 @@ public class Model {
     }
     public void setBrushWidth(int width){
         brush.setBrushWidth(width);
+    }
+
+    public void clearFigureArr(){
+        this.figureArr.clear();
     }
 
 

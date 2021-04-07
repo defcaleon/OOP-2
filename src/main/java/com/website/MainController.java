@@ -24,6 +24,7 @@ public class MainController {
     private  GraphicsContext gc;
     private final Model model = new Model();
     private final ArrayList<Dot> dotArr = new ArrayList<>();
+    private boolean flag=false;
 
     @FXML
     private Button drawBtn;
@@ -116,10 +117,38 @@ public class MainController {
         this.model.setFabric(Initialization.getFactoryByName(figureBox.getValue()));
     }
 
-    public void canvasClick(MouseEvent mouseEvent) {
-        dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
-    }
 
     public void clearCanvas(ActionEvent actionEvent) {
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        this.model.clearFigureArr();
+    }
+
+
+    public void mouseMove(MouseEvent mouseEvent) {
+        if(flag) {
+            gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+            dotArr.add(new Dot((int) mouseEvent.getX(), (int) mouseEvent.getY()));
+
+            model.redraw(gc);
+            model.mouseDraw(this.gc,this.dotArr,figureBox.getValue().toString());
+            dotArr.remove(dotArr.size()-1);
+        }
+    }
+
+    public void mouseClick(MouseEvent mouseEvent) {
+        if(!flag){
+            dotArr.clear();
+            dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
+            this.flag=true;
+        }else
+        {
+            gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+            model.redraw(gc);
+            dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
+            model.draw(this.gc,this.dotArr,figureBox.getValue().toString());
+
+            this.flag=false;
+        }
     }
 }
