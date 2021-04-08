@@ -22,4 +22,9 @@ public class PolyLine implements Lines {
         double[] dotArrY = Initialization.dotArrToIntYArr(dots);
         gc.strokePolyline(dotArrX,dotArrY,dots.size());
     }
+
+    @Override
+    public boolean isMoreThan2dots() {
+        return true;
+    }
 }

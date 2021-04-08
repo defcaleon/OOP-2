@@ -8,5 +8,6 @@ import java.util.ArrayList;
 public interface Lines {
 
     void paint(GraphicsContext gc,Brushes brush,ArrayList<Dot> dots);
+    boolean isMoreThan2dots();
 
 }

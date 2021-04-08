@@ -27,4 +27,9 @@ public class Polygon implements Lines {
         gc.strokePolygon(dotArrX,dotArrY,dots.size());
         gc.fillPolygon(dotArrX,dotArrY,dots.size());
     }
+
+    @Override
+    public boolean isMoreThan2dots() {
+        return true;
+    }
 }

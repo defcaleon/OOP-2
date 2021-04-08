@@ -29,7 +29,10 @@ public class Rectangle implements Lines {
         gc.fillRect(dots.get(0).getX(),dots.get(0).getY(),width,height);
     }
 
-
+    @Override
+    public boolean isMoreThan2dots() {
+        return false;
+    }
 
 
 }

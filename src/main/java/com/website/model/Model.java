@@ -23,6 +23,7 @@ public class Model {
 
     private Brushes brush;
     private final Brushes whiteBrush = new SimpleBrush();
+    private boolean lastFigureHave2OrMoreDors;
 
     public void start(GraphicsContext gc){
 
@@ -32,6 +33,7 @@ public class Model {
         this.brush = brushFabric.createBrush();
         brushStartInit(this.brush);
         Initialization.whiteBrushInit(whiteBrush);
+        lastFigureHave2OrMoreDors=false;
 
     }
 
@@ -45,6 +47,7 @@ public class Model {
         assert fabric != null;
         Lines figure1 = fabric.createFigure();
         figure1.paint(gc,this.brush,dotArr);
+        lastFigureHave2OrMoreDors=figure1.isMoreThan2dots();
 
         figureArr.add(new Proection(figure1,dotArr,brush));
         dotArr.clear();
@@ -80,6 +83,9 @@ public class Model {
         assert fabric != null;
         Lines figure1 = fabric.createFigure();
         figure1.paint(gc, this.brush, dotArr);
+    }
+    public boolean is2OrMoreDotsInFigure(){
+        return lastFigureHave2OrMoreDors;
     }
 
 

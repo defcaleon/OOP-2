@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -137,18 +138,29 @@ public class MainController {
     }
 
     public void mouseClick(MouseEvent mouseEvent) {
-        if(!flag){
-            dotArr.clear();
-            dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
-            this.flag=true;
+
+        if(mouseEvent.getButton().equals(MouseButton.SECONDARY)){
+            if(model.is2OrMoreDotsInFigure()&&flag){
+
+                dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
+            }
         }else
         {
-            gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-            model.redraw(gc);
-            dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
-            model.draw(this.gc,this.dotArr,figureBox.getValue().toString());
+            if(!flag){
+                dotArr.clear();
+                dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
+                this.flag=true;
+            }else
+            {
+                gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+                model.redraw(gc);
+                dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
+                model.draw(this.gc,this.dotArr,figureBox.getValue().toString());
 
-            this.flag=false;
+                this.flag=false;
+            }
         }
+
+
     }
 }

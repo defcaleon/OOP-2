@@ -25,5 +25,10 @@ public class Line implements Lines {
         gc.strokeLine(dots.get(0).getX(),dots.get(0).getY(),dots.get(1).getX(),dots.get(1).getY());
     }
 
+    @Override
+    public boolean isMoreThan2dots() {
+        return false;
+    }
+
 
 }
