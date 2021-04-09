@@ -1,4 +1,4 @@
-package com.website.model;
+package com.website.fmodel;
 
 import java.util.Objects;
 

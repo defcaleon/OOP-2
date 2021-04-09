@@ -1,4 +1,4 @@
-package com.website.model;
+package com.website.fmodel;
 
 import com.website.interfaces.Brushes;
 import com.website.interfaces.Lines;

@@ -1,8 +1,11 @@
 package com.website;
 
-import com.website.model.Dot;
-import com.website.model.Initialization;
-import com.website.model.Model;
+
+import com.website.fmodel.Dot;
+import com.website.fmodel.Initialization;
+import com.website.fmodel.Model;
+
+import com.website.module.UndoRedoController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -13,13 +16,15 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
+
+
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
 
 public class MainController {
+
 
     private final Initialization init = new Initialization();
     private  GraphicsContext gc;
@@ -64,9 +69,7 @@ public class MainController {
         init.loadBrushTypes(brushWidth);
         init.loadFigures(figureBox);
         this.gc = canvas.getGraphicsContext2D();
-
         model.start(gc);
-
 
     }
 
@@ -111,7 +114,6 @@ public class MainController {
 
     public void comboAction(ActionEvent actionEvent) {
         model.setBrushWidth(brushWidth.getValue());
-        System.out.println(brushWidth.getValue());
     }
 
     public void comboAction2(ActionEvent actionEvent) {
@@ -120,14 +122,16 @@ public class MainController {
 
 
     public void clearCanvas(ActionEvent actionEvent) {
-        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        clearCanvas();
         this.model.clearFigureArr();
     }
 
 
     public void mouseMove(MouseEvent mouseEvent) {
+        cordX.setText(Double.toString(mouseEvent.getX()));
+        cordY.setText(Double.toString(mouseEvent.getY()));
         if(flag) {
-            gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+            clearCanvas();
 
             dotArr.add(new Dot((int) mouseEvent.getX(), (int) mouseEvent.getY()));
 
@@ -152,7 +156,7 @@ public class MainController {
                 this.flag=true;
             }else
             {
-                gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+                clearCanvas();
                 model.redraw(gc);
                 dotArr.add(new Dot((int)mouseEvent.getX(),(int)mouseEvent.getY()));
                 model.draw(this.gc,this.dotArr,figureBox.getValue().toString());
@@ -162,5 +166,19 @@ public class MainController {
         }
 
 
+    }
+
+    public void undoClick(MouseEvent mouseEvent) {
+        clearCanvas();
+        model.undo(gc);
+    }
+
+    private void clearCanvas(){
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+    }
+
+    public void redoCLick(MouseEvent mouseEvent) {
+        clearCanvas();
+        model.redo(gc);
     }
 }

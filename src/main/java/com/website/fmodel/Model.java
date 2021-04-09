@@ -1,4 +1,4 @@
-package com.website.model;
+package com.website.fmodel;
 
 
 import com.website.brushes.SimpleBrush;
@@ -8,6 +8,7 @@ import com.website.figuresfactories.LineFactory;
 import com.website.interfaces.Brushes;
 
 import com.website.interfaces.Lines;
+import com.website.module.UndoRedoController;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
@@ -16,8 +17,8 @@ import java.util.ArrayList;
 
 public class Model {
 
-    ArrayList<Proection> figureArr = new ArrayList<>();
-
+    //private ArrayList<Proection> figureArr = new ArrayList<>();
+    private final UndoRedoController undoRedoController= new UndoRedoController();
     private FigureFactory fabric;
     private BrushFactory brushFabric;
 
@@ -49,7 +50,8 @@ public class Model {
         figure1.paint(gc,this.brush,dotArr);
         lastFigureHave2OrMoreDors=figure1.isMoreThan2dots();
 
-        figureArr.add(new Proection(figure1,dotArr,brush));
+        undoRedoController.addFigure(new Proection(figure1,dotArr,brush));
+        //figureArr.add(new Proection(figure1,dotArr,brush));
         dotArr.clear();
     }
 
@@ -72,10 +74,7 @@ public class Model {
     }
 
     public void redraw(GraphicsContext gc){
-       for(Proection ob:figureArr){
-           ob.getFigure().paint(gc,ob.getBrush(),ob.getDots());
-
-       }
+       undoRedoController.fullArrDraw(gc);
 
     }
     public void mouseDraw(GraphicsContext gc, ArrayList<Dot> dotArr, String figure) {
@@ -100,7 +99,15 @@ public class Model {
     }
 
     public void clearFigureArr(){
-        this.figureArr.clear();
+        undoRedoController.clearFigureArr();
+        //this.figureArr.clear();
+    }
+
+    public void undo(GraphicsContext gc){
+        undoRedoController.undo(gc);
+    }
+    public  void redo(GraphicsContext gc){
+        undoRedoController.redo(gc);
     }
 
 

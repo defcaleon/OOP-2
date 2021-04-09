@@ -2,9 +2,9 @@ package com.website.figures;
 
 import com.website.interfaces.Brushes;
 import com.website.interfaces.Lines;
-import com.website.model.Dot;
-import com.website.model.Initialization;
-import com.website.model.Model;
+import com.website.fmodel.Dot;
+import com.website.fmodel.Initialization;
+import com.website.fmodel.Model;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
