@@ -8,7 +8,7 @@ import com.website.figuresfactories.LineFactory;
 import com.website.interfaces.Brushes;
 
 import com.website.interfaces.Lines;
-import com.website.module.UndoRedoController;
+import com.website.undoRedo.UndoRedoController;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
