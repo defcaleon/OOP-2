@@ -16,12 +16,6 @@ public class UndoRedoController {
         currIndex=0;
     }
 
-    public void incIndex(){
-        currIndex++;
-    }
-    public  void decIndex(){
-        currIndex--;
-    }
 
     public void addFigure(Proection figure){
 

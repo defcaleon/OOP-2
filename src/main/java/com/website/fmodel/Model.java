@@ -100,7 +100,6 @@ public class Model {
 
     public void clearFigureArr(){
         undoRedoController.clearFigureArr();
-        //this.figureArr.clear();
     }
 
     public void undo(GraphicsContext gc){

@@ -5,7 +5,7 @@ import com.website.fmodel.Dot;
 import com.website.fmodel.Initialization;
 import com.website.fmodel.Model;
 
-import com.website.module.UndoRedoController;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;

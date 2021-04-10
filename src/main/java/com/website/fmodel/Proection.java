@@ -3,13 +3,15 @@ package com.website.fmodel;
 import com.website.interfaces.Brushes;
 import com.website.interfaces.Lines;
 
+
 import java.util.ArrayList;
 
-public class Proection   {
+public class Proection  {
 
     private final Lines figure;
     private final ArrayList<Dot> dots;
     private final Brushes brush;
+
 
     public Proection(Lines figure, ArrayList<Dot> dots,Brushes brush) {
         this.figure = figure;
