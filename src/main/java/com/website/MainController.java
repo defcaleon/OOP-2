@@ -2,6 +2,7 @@ package com.website;
 
 
 import com.website.fmodel.Dot;
+import com.website.fmodel.FileManager;
 import com.website.fmodel.Initialization;
 import com.website.fmodel.Model;
 
@@ -20,17 +21,19 @@ import javafx.scene.input.MouseEvent;
 
 import javafx.scene.shape.Rectangle;
 
+import java.io.File;
 import java.util.ArrayList;
 
 
 public class MainController {
 
-
+    private final FileManager fileManager= new FileManager();
     private final Initialization init = new Initialization();
     private  GraphicsContext gc;
     private final Model model = new Model();
     private final ArrayList<Dot> dotArr = new ArrayList<>();
     private boolean flag=false;
+    private File file;
 
     @FXML
     private Button drawBtn;
@@ -180,5 +183,20 @@ public class MainController {
     public void redoCLick(MouseEvent mouseEvent) {
         clearCanvas();
         model.redo(gc);
+    }
+
+    public void openFile(ActionEvent actionEvent) {
+
+        file=fileManager.openFile();
+        model.deserialize(file);
+        clearCanvas();
+        model.redraw(gc);
+
+    }
+
+    public void saveFile(ActionEvent actionEvent) {
+
+        file=fileManager.saveFile();
+        model.serialize(file);
     }
 }

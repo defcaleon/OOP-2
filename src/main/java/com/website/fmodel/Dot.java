@@ -1,8 +1,9 @@
 package com.website.fmodel;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Dot {
+public class Dot implements Serializable {
 
    private int x;
    private int y;

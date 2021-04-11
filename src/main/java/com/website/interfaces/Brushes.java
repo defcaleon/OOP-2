@@ -1,8 +1,11 @@
 package com.website.interfaces;
 
+import com.website.brushes.SerializableColor;
 import javafx.scene.paint.Color;
 
-public interface Brushes {
+import java.io.Serializable;
+
+public interface Brushes extends Serializable {
 
     void setBrushLineColor(Color color);
     void setBrushWidth(int widthPx);
@@ -11,9 +14,6 @@ public interface Brushes {
     Color getBrushLineColor();
     Color getBrushFillColor();
     int getBrushWidth();
-
-
-
 
     //BrushType getBrushType();
     //void setBrushType(BrushType brushType);

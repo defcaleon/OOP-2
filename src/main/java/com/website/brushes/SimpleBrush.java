@@ -3,9 +3,11 @@ package com.website.brushes;
 import com.website.interfaces.Brushes;
 import javafx.scene.paint.Color;
 
+import java.io.Serializable;
+
 public class SimpleBrush implements Brushes {
-    private  Color brushLineColor;
-    private  Color brushFillColor;
+    private  SerializableColor brushLineColor;
+    private  SerializableColor brushFillColor;
     private  int widthPx;
 
     public SimpleBrush(){
@@ -13,14 +15,14 @@ public class SimpleBrush implements Brushes {
     }
 
     public SimpleBrush(Color brushLineColor, Color brushFillColor, int widthPx) {
-        this.brushLineColor = brushLineColor;
-        this.brushFillColor = brushFillColor;
+        this.brushLineColor = new SerializableColor(brushLineColor);
+        this.brushFillColor = new SerializableColor(brushFillColor);
         this.widthPx = widthPx;
     }
 
     @Override
     public void setBrushLineColor(Color color) {
-        this.brushLineColor=color;
+        this.brushLineColor=new SerializableColor(color);
     }
 
     @Override
@@ -30,21 +32,22 @@ public class SimpleBrush implements Brushes {
 
     @Override
     public void setBrushFillColor(Color color) {
-        this.brushFillColor=color;
+        this.brushFillColor=new SerializableColor(color);
     }
 
     @Override
     public Color getBrushLineColor() {
-        return brushLineColor;
+        return brushLineColor.getFXColor();
     }
 
     @Override
     public Color getBrushFillColor() {
-        return brushFillColor;
+        return brushFillColor.getFXColor();
     }
 
     @Override
     public int getBrushWidth() {
         return widthPx;
     }
+
 }

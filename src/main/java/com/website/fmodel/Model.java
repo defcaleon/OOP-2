@@ -13,12 +13,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class Model {
 
     //private ArrayList<Proection> figureArr = new ArrayList<>();
-    private final UndoRedoController undoRedoController= new UndoRedoController();
+    private UndoRedoController undoRedoController= new UndoRedoController();
     private FigureFactory fabric;
     private BrushFactory brushFabric;
 
@@ -108,7 +109,31 @@ public class Model {
     public  void redo(GraphicsContext gc){
         undoRedoController.redo(gc);
     }
+    public void serialize(File file){
 
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file)))
+        {
+            oos.writeObject(undoRedoController);
+        }
+        catch(Exception ex){
+
+            System.out.println();
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public  void deserialize(File file){
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file)))
+        {
+
+            undoRedoController=(UndoRedoController) ois.readObject();
+        }
+        catch(Exception ex){
+            System.out.println();
+            System.out.println(ex.getMessage());
+
+        }
+    }
 
 
 

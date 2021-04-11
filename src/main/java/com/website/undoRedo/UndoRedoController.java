@@ -3,9 +3,10 @@ package com.website.undoRedo;
 import com.website.fmodel.Proection;
 import javafx.scene.canvas.GraphicsContext;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UndoRedoController {
+public class UndoRedoController implements Serializable {
 
     private ArrayList<Proection> arr;
     private int currIndex;
@@ -61,6 +62,8 @@ public class UndoRedoController {
         currIndex=0;
     }
 
+
+
     private  void clearArrFromIndex(){
 
         int arrSize=arr.size();
@@ -69,5 +72,12 @@ public class UndoRedoController {
         }
     }
 
+    @Override
+    public String toString() {
+        return "UndoRedoController{" +
+                "arr=" + arr +
+                ", currIndex=" + currIndex +
+                '}';
+    }
 
 }

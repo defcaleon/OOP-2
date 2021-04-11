@@ -4,9 +4,10 @@ import com.website.interfaces.Brushes;
 import com.website.interfaces.Lines;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Proection  {
+public class Proection implements Serializable {
 
     private final Lines figure;
     private final ArrayList<Dot> dots;
