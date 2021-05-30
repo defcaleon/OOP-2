@@ -120,7 +120,7 @@ public class MainController {
     }
 
     public void comboAction2(ActionEvent actionEvent) {
-        this.model.setFabric(Initialization.getFactoryByName(figureBox.getValue()));
+        this.model.setFabric(init.getFactoryByName(figureBox.getValue()));
     }
 
 

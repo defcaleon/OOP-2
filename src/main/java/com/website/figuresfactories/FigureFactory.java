@@ -5,5 +5,6 @@ import com.website.interfaces.Lines;
 public interface FigureFactory {
 
     Lines createFigure();
+    String getFigureName();
 
 }

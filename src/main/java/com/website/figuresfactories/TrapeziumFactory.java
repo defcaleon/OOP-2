@@ -1,16 +1,17 @@
 package com.website.figuresfactories;
 
-import com.website.figures.PolyLine;
+import com.website.figures.Trapezium;
 import com.website.interfaces.Lines;
 
-public class PolyLineFactory implements FigureFactory {
 
+public class TrapeziumFactory implements FigureFactory {
     @Override
     public Lines createFigure() {
-        return new PolyLine();
+        return new Trapezium();
     }
+
     @Override
     public String getFigureName() {
-        return "Polyline";
+        return "Trapezium";
     }
 }

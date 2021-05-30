@@ -8,4 +8,8 @@ public class PolygonFactory implements FigureFactory {
     public Lines createFigure() {
         return new Polygon();
     }
+    @Override
+    public String getFigureName() {
+        return "Polygon";
+    }
 }

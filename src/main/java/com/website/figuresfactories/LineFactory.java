@@ -9,4 +9,8 @@ public class LineFactory implements FigureFactory {
     public Lines createFigure() {
         return new Line();
     }
+    @Override
+    public String getFigureName() {
+        return "Line";
+    }
 }

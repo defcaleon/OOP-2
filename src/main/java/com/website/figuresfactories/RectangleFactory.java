@@ -9,4 +9,8 @@ public class RectangleFactory implements FigureFactory {
     public Lines createFigure() {
         return new Rectangle();
     }
+    @Override
+    public String getFigureName() {
+        return "Rectangle";
+    }
 }

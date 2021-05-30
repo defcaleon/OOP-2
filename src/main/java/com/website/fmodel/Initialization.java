@@ -4,6 +4,7 @@ import com.website.brushes.SimpleBrush;
 import com.website.brushfactories.BrushFactory;
 import com.website.brushfactories.SimpleBrushFactory;
 import com.website.figuresfactories.*;
+
 import com.website.interfaces.Brushes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,19 +12,57 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 
+
 import java.util.ArrayList;
+
 
 public class Initialization {
 
+    private  ArrayList<String> strArr = new ArrayList<>();
+    private  ArrayList<FigureFactory> arr=arrFactoryInit();
+
+
+    private  ArrayList<FigureFactory> arrFactoryInit(){
+
+        arr = new ArrayList<>();
+        addNewFigure(new EllipseFactory());
+        addNewFigure(new LineFactory());
+        addNewFigure(new PolygonFactory());
+        addNewFigure(new PolyLineFactory());
+        addNewFigure(new RectangleFactory());
+        addNewFigure(new TrapeziumFactory());
+        return arr;
+    }
+
+
+
+
+    public  FigureFactory  getFactoryByName(String name){
+        int index = strArr.indexOf(name);
+        return arr.get(index);
+
+    }
+
+    //afterr add need call loadFigures;
+    public void addNewFigure(FigureFactory figure){
+        arr.add(figure);
+        strArr.add(figure.getFigureName());
+
+
+    }
+
+
     public  void loadBrushTypes(ComboBox<Integer> brushType){
+
         ObservableList<Integer> arr = FXCollections.observableArrayList(2,3,4,5,6,7,8,10,12,14,18,22,26,30,36,42,50,60,72);
         brushType.setItems(arr);
         brushType.getSelectionModel().selectFirst();
     }
 
     public void loadFigures(ComboBox<String> brushType){
-        ObservableList<String> arr = FXCollections.observableArrayList("line","rectangle","ellipse","polyline","polygon");
-        brushType.setItems(arr);
+        // ObservableList<String> arr = FXCollections.observableArrayList("line","rectangle","ellipse","polyline","polygon");
+
+        brushType.setItems(FXCollections.observableList(strArr));
         brushType.getSelectionModel().selectFirst();
     }
 
@@ -66,26 +105,6 @@ public class Initialization {
         brush.setBrushLineColor(Color.WHITE);
     }
 
-    public  static FigureFactory getFactoryByName(String name){
-        switch (name){
-            case "line":{
-                return new LineFactory();
-            }
-            case "rectangle":{
-                return  new RectangleFactory();
-            }
-            case "polyline":{
-                return  new PolyLineFactory();
-            }
-            case"ellipse":{
-                return  new EllipseFactory();
-            }
-            case "polygon":{
-                return  new PolygonFactory();
-            }
-            default: return null;
-        }
-    }
 
     public static BrushFactory getBrushByName(String name){
 
@@ -99,8 +118,8 @@ public class Initialization {
     }
 
     public  static Brushes getBrushCopy(Brushes brush){
-            //
-            return new SimpleBrush(brush.getBrushLineColor(),brush.getBrushFillColor(), brush.getBrushWidth());
+        //
+        return new SimpleBrush(brush.getBrushLineColor(),brush.getBrushFillColor(), brush.getBrushWidth());
 
     }
 }

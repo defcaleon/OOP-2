@@ -9,4 +9,8 @@ public class EllipseFactory implements FigureFactory {
     public Lines createFigure() {
         return new Ellipse();
     }
+    @Override
+    public String getFigureName() {
+        return "Ellipse";
+    }
 }
