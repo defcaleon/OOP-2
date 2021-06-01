@@ -3,15 +3,17 @@ package com.website.fmodel;
 
 import com.website.brushes.SimpleBrush;
 import com.website.brushfactories.BrushFactory;
-import com.website.figuresfactories.FigureFactory;
+import interfaces.FigureFactory;
 import com.website.figuresfactories.LineFactory;
-import com.website.interfaces.Brushes;
 
-import com.website.interfaces.Lines;
+
+import interfaces.Brushes;
+import interfaces.Lines;
 import com.website.undoRedo.UndoRedoController;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
+import model.Dot;
 
 import java.io.*;
 import java.util.ArrayList;

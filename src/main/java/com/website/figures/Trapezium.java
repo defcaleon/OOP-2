@@ -1,12 +1,11 @@
 package com.website.figures;
 
-
-import com.website.fmodel.Dot;
 import com.website.fmodel.Initialization;
 import com.website.fmodel.Model;
-import com.website.interfaces.Brushes;
-import com.website.interfaces.Lines;
 import javafx.scene.canvas.GraphicsContext;
+import model.Dot;
+import interfaces.Brushes;
+import interfaces.Lines;
 import java.util.ArrayList;
 
 

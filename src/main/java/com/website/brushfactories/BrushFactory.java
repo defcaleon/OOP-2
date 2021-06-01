@@ -1,6 +1,6 @@
 package com.website.brushfactories;
 
-import com.website.interfaces.Brushes;
+import interfaces.Brushes;
 
 public interface BrushFactory {
 

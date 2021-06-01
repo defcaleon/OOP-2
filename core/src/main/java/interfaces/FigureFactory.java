@@ -1,6 +1,4 @@
-package com.website.figuresfactories;
-
-import interfaces.Lines;
+package interfaces;
 
 public interface FigureFactory {
 

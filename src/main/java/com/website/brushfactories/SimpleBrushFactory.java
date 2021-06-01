@@ -1,7 +1,7 @@
 package com.website.brushfactories;
 
 import com.website.brushes.SimpleBrush;
-import com.website.interfaces.Brushes;
+import interfaces.Brushes;
 
 public class SimpleBrushFactory implements BrushFactory {
 

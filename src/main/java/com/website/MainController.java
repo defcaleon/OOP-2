@@ -1,7 +1,5 @@
 package com.website;
 
-
-import com.website.fmodel.Dot;
 import com.website.fmodel.FileManager;
 import com.website.fmodel.Initialization;
 import com.website.fmodel.Model;
@@ -20,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 
 
 import javafx.scene.shape.Rectangle;
+import model.Dot;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,13 +1,13 @@
 package com.website.figures;
 
 import com.website.fmodel.Initialization;
-import com.website.fmodel.Dot;
-import com.website.interfaces.Brushes;
-import com.website.interfaces.Lines;
+
 import com.website.fmodel.Model;
 import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
-
+import model.Dot;
+import interfaces.Brushes;
+import interfaces.Lines;
 public class Line implements Lines {
 
 

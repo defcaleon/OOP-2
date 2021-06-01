@@ -1,7 +1,8 @@
 package com.website.figuresfactories;
 
 import com.website.figures.Rectangle;
-import com.website.interfaces.Lines;
+import interfaces.FigureFactory;
+import interfaces.Lines;
 
 public class RectangleFactory implements FigureFactory {
 

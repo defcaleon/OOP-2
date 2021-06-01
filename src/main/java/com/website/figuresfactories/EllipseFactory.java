@@ -1,7 +1,9 @@
 package com.website.figuresfactories;
 
 import com.website.figures.Ellipse;
-import com.website.interfaces.Lines;
+import interfaces.FigureFactory;
+import interfaces.Lines;
+
 
 public class EllipseFactory implements FigureFactory {
 

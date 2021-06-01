@@ -5,12 +5,15 @@ import com.website.brushfactories.BrushFactory;
 import com.website.brushfactories.SimpleBrushFactory;
 import com.website.figuresfactories.*;
 
-import com.website.interfaces.Brushes;
+
+import interfaces.Brushes;
+import interfaces.FigureFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
+import model.Dot;
 
 
 import java.util.ArrayList;

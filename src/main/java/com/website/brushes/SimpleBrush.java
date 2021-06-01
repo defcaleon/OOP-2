@@ -1,6 +1,7 @@
 package com.website.brushes;
 
-import com.website.interfaces.Brushes;
+
+import interfaces.Brushes;
 import javafx.scene.paint.Color;
 
 import java.io.Serializable;

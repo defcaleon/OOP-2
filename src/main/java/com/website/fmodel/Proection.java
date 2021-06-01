@@ -1,7 +1,9 @@
 package com.website.fmodel;
 
-import com.website.interfaces.Brushes;
-import com.website.interfaces.Lines;
+
+import interfaces.Brushes;
+import interfaces.Lines;
+import model.Dot;
 
 
 import java.io.Serializable;
