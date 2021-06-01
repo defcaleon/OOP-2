@@ -1,6 +1,3 @@
-package com.website.interfaces;
-
-import com.website.brushes.SerializableColor;
 import javafx.scene.paint.Color;
 
 import java.io.Serializable;

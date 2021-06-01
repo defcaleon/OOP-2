@@ -1,5 +1,3 @@
-package com.website.fmodel;
-
 import java.io.Serializable;
 import java.util.Objects;
 
