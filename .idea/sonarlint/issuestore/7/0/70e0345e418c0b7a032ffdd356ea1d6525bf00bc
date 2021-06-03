@@ -1,0 +1,39 @@
+
+[
+java:S1155\">Use isEmpty() to check whether the collection is empty or not.(À 8Í¶Ãºœ/
+L
+java:S1172P"1Remove this unused method parameter "mouseEvent".(åŒƒıÿÿÿÿ
+G
+java:S1172V"1Remove this unused method parameter "mouseEvent".(œà«–
+G
+java:S1172["1Remove this unused method parameter "mouseEvent".(¯¥Õõ
+X
+java:S1858_"B"getValue" returns a string, there's no need to call "toString()".(œßï
+L
+java:S1172d"1Remove this unused method parameter "mouseEvent".(°Ô©Öøÿÿÿÿ
+T
+java:S1117f"9Rename "cordX" which hides the field declared at line 44.(ôÓıúÿÿÿÿ
+N
+java:S1117g"9Rename "cordY" which hides the field declared at line 41.(›òË
+L
+java:S6212l"/Declare this local variable with "var" instead.(ïÂáÊ8Ş¶Ãºœ/
+F
+java:S1172r"1Remove this unused method parameter "mouseEvent".(àĞÉu
+M
+java:S1172v"2Remove this unused method parameter "actionEvent".(æöàÁşÿÿÿÿ
+H
+java:S1172z"2Remove this unused method parameter "actionEvent".(µªÑ
+G
+java:S1172"2Remove this unused method parameter "actionEvent".(Î•.
+^
+java:S1858"B"getValue" returns a string, there's no need to call "toString()".(¶õ‰ıÿÿÿÿ
+Y
+java:S1858¥"B"getValue" returns a string, there's no need to call "toString()".(œßï
+H
+java:S1172®"1Remove this unused method parameter "mouseEvent".(Ê°Í”
+H
+java:S1172·"1Remove this unused method parameter "mouseEvent".( ”ğŸ
+I
+java:S1172¼"2Remove this unused method parameter "actionEvent".(Òä©À
+I
+java:S1172Å"2Remove this unused method parameter "actionEvent".(·™à…

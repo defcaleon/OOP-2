@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="trapeziumModule" />
+        <module name="trapezium" />
         <module name="core" />
         <module name="OOP-2.1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="core (1) (org.example)" target="15" />
+      <module name="trapeziumModule" target="15" />
       <module name="xz" target="15" />
     </bytecodeTargetLevel>
   </component>

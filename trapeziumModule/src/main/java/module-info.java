@@ -1,12 +1,9 @@
-import Services.Service;
-import com.website.Services.IService;
+import plugService.IService;
+import service.Service;
 
 module trapeziumModule{
-    requires com.website;
     requires core;
     requires javafx.graphics;
 
     provides IService with Service;
-
-
 }

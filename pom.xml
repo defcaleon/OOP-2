@@ -1,14 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.website</groupId>
-    <artifactId>OOP-2.1</artifactId>
-    <packaging>pom</packaging>
+    <groupId>org.example</groupId>
+    <artifactId>OOP</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>core</module>
-<!--        <module>trapeziumModule</module>-->
-    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -26,23 +21,31 @@
             <version>15.0.1</version>
         </dependency>
         <dependency>
-            <groupId>com.website</groupId>
+            <groupId>com.website.core</groupId>
             <artifactId>core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/out/artifacts/core_jar/core.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.website.plugins.trapezoid</groupId>
+            <artifactId>trapezium</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/out/artifacts/trapezium_jar/trapezium.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.website.plugins.trapezoid</groupId>
+            <artifactId>trapezium</artifactId>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.website</groupId>-->
-        <!--            <artifactId>trapeziumModule</artifactId>-->
-        <!--            <version>1.0-SNAPSHOT</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.website</groupId>-->
-        <!--            <artifactId>trapeziumModule</artifactId>-->
-        <!--            <version>1.0-SNAPSHOT</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.website.plugins.trapezoid</groupId>
+            <artifactId>trapezium</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -57,9 +60,9 @@
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.5</version>
+                <version>0.0.3</version>
                 <configuration>
-                    <mainClass>com.website.App</mainClass>
+                    <mainClass>org.example.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>

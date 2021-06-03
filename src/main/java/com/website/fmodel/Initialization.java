@@ -1,6 +1,6 @@
 package com.website.fmodel;
 
-import com.website.Services.IService;
+import plugService.IService;
 import com.website.brushes.SimpleBrush;
 import com.website.brushfactories.BrushFactory;
 import com.website.brushfactories.SimpleBrushFactory;

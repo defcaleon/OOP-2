@@ -1,0 +1,25 @@
+
+Œ
+java:S13190"qThe type of the "dotArr" object should be an interface such as "List" rather than the implementation "ArrayList".(Ùí’òüÿÿÿÿ
+Œ
+java:S1319I"qThe type of the "dotArr" object should be an interface such as "List" rather than the implementation "ArrayList".(Ô˜Õ›ıÿÿÿÿ
+S
+java:S1128"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8òñ»œ/
+p
+java:S1450"ZRemove the "brushFabric" field and declare it as a local variable in the relevant methods.(Ìİ”
+P	java:S125"<This block of commented-out lines of code should be removed.(äÉ÷
+?
+java:S1172 ")Remove this unused method parameter "gc".(ö·¢‡
+H
+java:S11720"-Remove this unused method parameter "figure".(Ùí’òüÿÿÿÿ
+V	java:S1259"<This block of commented-out lines of code should be removed.(ÏÖøøÿÿÿÿ
+H
+java:S1172I"-Remove this unused method parameter "figure".(Ô˜Õ›ıÿÿÿÿ
+E
+java:S6212j"/Declare this local variable with "var" instead.(û¼›
+S	java:S106p"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+S	java:S106q"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ
+D
+java:S6212v"/Declare this local variable with "var" instead.(Ó¡ãk
+S	java:S106|"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+S	java:S106}"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ
