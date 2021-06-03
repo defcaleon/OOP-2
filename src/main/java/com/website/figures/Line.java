@@ -5,6 +5,8 @@ import com.website.fmodel.Initialization;
 import com.website.fmodel.Model;
 import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
+
+import model.Additional;
 import model.Dot;
 import interfaces.Brushes;
 import interfaces.Lines;
@@ -18,10 +20,10 @@ public class Line implements Lines {
     @Override
     public void paint(GraphicsContext gc, Brushes brush, ArrayList<Dot> dots) {
         if(dots.size()<2){
-            Model.alert("need 2 cords to draw line");
+            Additional.alert("need 2 cords to draw line");
             return;
         }
-        Initialization.gcInit(gc,brush);
+        Additional.gcInit(gc,brush);
         gc.strokeLine(dots.get(0).getX(),dots.get(0).getY(),dots.get(1).getX(),dots.get(1).getY());
     }
 

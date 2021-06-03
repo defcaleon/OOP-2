@@ -59,16 +59,6 @@ public class Model {
     }
 
 
-    public  static void alert(String msg){
-
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText(msg);
-
-        alert.showAndWait();
-    }
 
     private void brushStartInit(Brushes brush){
         brush.setBrushLineColor(Color.BLACK);

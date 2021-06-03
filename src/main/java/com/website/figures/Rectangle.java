@@ -1,6 +1,7 @@
 package com.website.figures;
 
 
+import model.Additional;
 import model.Dot;
 import interfaces.Brushes;
 import interfaces.Lines;
@@ -19,10 +20,10 @@ public class Rectangle implements Lines {
     @Override
     public void paint(GraphicsContext gc, Brushes brush, ArrayList<Dot> dots) {
         if(dots.size()<2){
-            Model.alert("need 2 cords to draw rectangle");
+            Additional.alert("need 2 cords to draw rectangle");
             return;
         }
-        Initialization.gcInit(gc,brush);
+        Additional.gcInit(gc,brush);
 
         int x1=dots.get(0).getX();
         int x2=dots.get(1).getX();

@@ -1,5 +1,6 @@
 package com.website.fmodel;
 
+import com.website.Services.IService;
 import com.website.brushes.SimpleBrush;
 import com.website.brushfactories.BrushFactory;
 import com.website.brushfactories.SimpleBrushFactory;
@@ -10,13 +11,21 @@ import interfaces.Brushes;
 import interfaces.FigureFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.canvas.GraphicsContext;
+
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import model.Dot;
 
 
+import java.lang.module.Configuration;
+import java.lang.module.ModuleDescriptor;
+import java.lang.module.ModuleFinder;
+import java.lang.module.ModuleReference;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Initialization {
@@ -33,12 +42,40 @@ public class Initialization {
         addNewFigure(new PolygonFactory());
         addNewFigure(new PolyLineFactory());
         addNewFigure(new RectangleFactory());
-        addNewFigure(new TrapeziumFactory());
+        //addNewFigure(new TrapeziumFactory());
+
+        init();
         return arr;
     }
 
+    private void init(){
+        Path pluginsDir = Paths.get("plugins");
+        ModuleFinder pluginsFinder = ModuleFinder.of(pluginsDir);
 
+        List<String> plugins = pluginsFinder
+                .findAll()
+                .stream()
+                .map(ModuleReference::descriptor)
+                .map(ModuleDescriptor::name)
+                .collect(Collectors.toList());
 
+        Configuration pluginsConfiguration = ModuleLayer
+                .boot()
+                .configuration()
+                .resolve(pluginsFinder, ModuleFinder.of(), plugins);
+
+        ModuleLayer layer = ModuleLayer
+                .boot()
+                .defineModulesWithOneLoader(pluginsConfiguration, ClassLoader.getSystemClassLoader());
+
+        List<IService> services = IService.getServices(layer);
+        for (IService service : services) {
+            FigureFactory factory =service.doJob();
+            if(factory!=null) {
+                addNewFigure(factory);
+            }
+        }
+    }
 
     public  FigureFactory  getFactoryByName(String name){
         int index = strArr.indexOf(name);
@@ -63,16 +100,9 @@ public class Initialization {
     }
 
     public void loadFigures(ComboBox<String> brushType){
-        // ObservableList<String> arr = FXCollections.observableArrayList("line","rectangle","ellipse","polyline","polygon");
 
         brushType.setItems(FXCollections.observableList(strArr));
         brushType.getSelectionModel().selectFirst();
-    }
-
-    public static void gcInit(GraphicsContext gc, Brushes brush){
-        gc.setLineWidth(brush.getBrushWidth());
-        gc.setStroke(brush.getBrushLineColor());
-        gc.setFill(brush.getBrushFillColor());
     }
 
     public int ValidTextArea(String text){

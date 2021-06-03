@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 
 
 import javafx.scene.shape.Rectangle;
+import model.Additional;
 import model.Dot;
 
 import java.io.File;
@@ -89,7 +90,7 @@ public class MainController {
 
     public void drawBtnClick(MouseEvent mouseEvent) {
         if(dotArr.size()==0){
-            Model.alert("no dots");
+            Additional.alert("no dots");
         }else{
             model.draw(this.gc,this.dotArr,figureBox.getValue().toString());
         }
@@ -102,7 +103,7 @@ public class MainController {
         int cordY =  this.init.ValidTextArea(this.cordY.getText());
 
         if(cordX<0||cordY<0){
-            Model.alert("cords must be positive numbers");
+            Additional.alert("cords must be positive numbers");
         }else{
             Dot dot=new Dot(cordX,cordY);
             this.dotArr.add(dot);

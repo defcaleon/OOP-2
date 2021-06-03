@@ -1,5 +1,6 @@
 package com.website.figures;
 
+import model.Additional;
 import model.Dot;
 import interfaces.Brushes;
 import interfaces.Lines;
@@ -14,10 +15,10 @@ public class PolyLine implements Lines {
     @Override
     public void paint(GraphicsContext gc, Brushes brush, ArrayList<Dot> dots) {
         if(dots.size()<2){
-            Model.alert("need more than 2 cords to draw polyline");
+            Additional.alert("need more than 2 cords to draw polyline");
             return;
         }
-        Initialization.gcInit(gc,brush);
+        Additional.gcInit(gc,brush);
         double[] dotArrX = Initialization.dotArrToIntXArr(dots);
         double[] dotArrY = Initialization.dotArrToIntYArr(dots);
         gc.strokePolyline(dotArrX,dotArrY,dots.size());

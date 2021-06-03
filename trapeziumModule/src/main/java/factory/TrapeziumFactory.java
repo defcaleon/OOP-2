@@ -1,6 +1,7 @@
-package com.website.figuresfactories;
+package factory;
 
-import com.website.figures.Trapezium;
+
+import figure.Trapezium;
 import interfaces.FigureFactory;
 import interfaces.Lines;
 
