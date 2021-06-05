@@ -36,12 +36,8 @@ _
 /src/main/java/com/website/fmodel/Proection.java,3\1\319fa698d1c9b2466ed70d9a62ff0d8963389cc6
 X
 (core/src/main/java/model/Additional.java,d\b\dbe4d4ef0697c4958fbc3f8bc4ac8ee287765ea0
-d
-4src/main/java/com/website/Services/BasicService.java,8\a\8abad27abd5a03ada9e3cb7f3ee3beb6b46193d3
 ^
 .src/main/java/com/website/figures/Ellipse.java,e\6\e60e5a9626744139f230030708b187487c2238d6
-`
-0src/main/java/com/website/Services/IService.java,d\5\d5312b708e3580392dc7e613d9daf8461c3b2023
 [
 +src/main/java/com/website/figures/Line.java,0\1\01fc8fcbccf015082ced68a4343285b3c7b13598
 ]
@@ -58,5 +54,5 @@ c
 3trapeziumModule/src/main/java/figure/Trapezium.java,e\d\ed1be100514f4b4860ba0e7ccbe8bec82c932141
 k
 ;trapeziumModule/src/main/java/factory/TrapeziumFactory.java,7\2\72bc3e1fd21286e97ba0d1c365060a4c56bb83cb
-S
-#trapeziumModule/trapeziumModule.iml,e\f\ef9b26e04d8d137251b544f757d25efd8600ac38
+\
+,src/main/resources/com/website/mainForm.fxml,3\3\336fad843e70b050763f2877007aa4b15861e8cf

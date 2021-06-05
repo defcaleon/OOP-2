@@ -34,18 +34,6 @@
             <scope>system</scope>
             <systemPath>${basedir}/out/artifacts/trapezium_jar/trapezium.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>com.website.plugins.trapezoid</groupId>
-            <artifactId>trapezium</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.website.plugins.trapezoid</groupId>
-            <artifactId>trapezium</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
